@@ -5,27 +5,12 @@
   <title>Site Title</title>
 </head>
 <body>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-          $('#btnShow').click(function(){
-              $("#dialog").dialog();
-              $("#frame").attr("src", "FTFCU_SDLC_Draft.pdf");
-          }); 
-      });
-  </script>
-  
-  <a href="#" id="btnShow">this link</a>
-  <div id="dialog" style="display: none;">
-      <div>
-          <iframe id="frame"></iframe>
-      </div>
-  </div>
-
-  
-  <!-- Include jQuery -->
-  <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-
-  
+<script>
+  var pdfurl = 'FTFCU_SDLC_Draft.pdf';
+//wrap the url with the google docs gview url
+pdfurl = 'http://docs.google.com/gview?url=' + pdfurl + '&embedded=true';
+document.getElementById('myiframe').src = pdfurl;
+</script>
+    <iframe id="myiframe"></iframe>
 </body>
 </html>
